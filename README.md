@@ -6,8 +6,8 @@ Add any RGB color to SpiderHeck's spider customization menu — not just the sev
 
 - **Arbitrary colors.** Any hex value, registered as a real, selectable swatch in the vanilla
   customization menu — not a separate overlay or replacement screen.
-- **In-game color picker.** Mods menu → SpiderHeckPalette: RGB sliders with a live preview bar.
-  No file editing required to create a color.
+- **In-game color picker.** Mods menu → SpiderHeckPalette: RGB sliders with a live preview bar,
+  plus naming and renaming through the game's own text-input popup. No file editing required.
 - **Persistent.** Colors survive a restart and apply correctly to other players in multiplayer
   (see [Notes](#notes) for the one cosmetic exception).
 - **Config-file colors.** Prefer hand-authoring a fixed palette instead of the picker? Edit the
@@ -31,11 +31,12 @@ No other mods required.
 ### In-game picker
 
 Open the mods menu → **SpiderHeckPalette**. Drag the six RGB sliders (body + legs), watch the
-preview bar update live, then **Add this colour**. It becomes selectable in the customization
-menu immediately — no restart needed.
+preview bar update live, then **Add this colour** and give it a name in the popup that appears.
+It becomes selectable in the customization menu immediately — no restart needed.
 
 - **Copy legs from body** — quick monochrome colors.
-- Colors you've added are listed with a **Remove** button (see [Limitations](#limitations)).
+- Colors you've added are listed with **Rename** and **Remove** buttons (see
+  [Limitations](#limitations)).
 
 ### Customization menu
 
@@ -62,17 +63,17 @@ colors:
 ```
 
 `id` must stay stable once you've selected that color in-game — the game saves your selection by
-ID, and renaming it orphans the save (you'll fall back to a random unlocked color).
+ID. Renaming a color in-game (or in the YAML) only ever changes its `name:`; the `id:` never
+changes, so a rename can never orphan a save.
 
-Colors added via the picker are auto-named ("Custom 1", "Custom 2", ...) since Silk's mod-menu UI
-has no text-input widget. Rename them by editing `name:` in `SpiderHeckPalette.picker.yaml`, or
-move the entry into the main YAML.
+Colors added via the picker are also editable directly in `SpiderHeckPalette.picker.yaml` if you'd
+rather batch-edit than use the popups.
 
 ## Limitations
 
-- **No in-game renaming** — edit the YAML directly (above).
 - **Removing a picker color takes effect on next launch**, not immediately; it stays selectable
   for the remainder of the current session.
+- **Renaming** updates the customization carousel once you back out of the mod-settings menu.
 - **Multiplayer:** in-match color is fully correct for every player, modded or not — colors are
   sent as raw RGB, not palette indices. The *lobby preview* of your color may show a fallback
   tint on an unmodded peer's screen; that's cosmetic only and doesn't affect the match itself.
