@@ -22,7 +22,7 @@ No other mods required.
 
 ## Installation
 
-1. Download `SpiderHeckPalette.dll`
+1. Download `SpiderHeckPalette.dll` from the [releases page](https://github.com/AeonSaber/SpiderHeckPalette/releases)
 2. Copy it to `SpiderHeck/Silk/Mods/`
 3. Launch the game — default config files are written on first run.
 
@@ -97,7 +97,7 @@ assemblies Silk already loads, so it stays a few KB rather than a few MB.
 dotnet build -c Release
 ```
 
-Targets `net472`. Requires a `lib/` folder populated with the referenced DLLs from your
+Targets `net472`. Requires a `lib/` folder (not included: the game's and Silk's DLLs are not redistributed) populated with the referenced DLLs from your
 `Silk/Library/` install (see `SpiderHeckPalette.csproj` for the exact list).
 
 ## Credits

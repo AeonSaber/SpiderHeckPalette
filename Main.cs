@@ -16,7 +16,7 @@ namespace SpiderHeckPalette
     /// registration is what makes vanilla save/restore work for free, and it avoids the
     /// CustomizationElement.SetStartingID NRE that unregistered colors trigger.
     /// </summary>
-    [SilkMod("SpiderHeckPalette", new string[] { "AeonS" }, "0.1.0", "0.7.0", "SpiderHeckPalette", 1)]
+    [SilkMod("SpiderHeckPalette", new string[] { "AeonS" }, "0.1.1", "0.7.0", "SpiderHeckPalette", 1)]
     public class PaletteMod : SilkMod
     {
         private const string HarmonyId = "com.aeons.spiderheck.palette";

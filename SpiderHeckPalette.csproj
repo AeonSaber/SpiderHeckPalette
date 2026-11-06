@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Title>SpiderHeck Palette</Title>
     <AssemblyName>SpiderHeckPalette</AssemblyName>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
     <AssemblyVersion>$(Version)</AssemblyVersion>
     <FileVersion>$(Version)</FileVersion>
     <Authors>AeonS</Authors>

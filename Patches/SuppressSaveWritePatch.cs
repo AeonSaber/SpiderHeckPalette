@@ -25,8 +25,9 @@ namespace SpiderHeckPalette.Patches
     {
         /// <returns>false to skip the vanilla method for our own IDs only.</returns>
         [HarmonyPrefix]
-        public static bool Prefix(string id)
+        public static bool Prefix(string __0) // positional: the game renamed this parameter from "id" to "ID" in an update
         {
+            string id = __0;
             if (string.IsNullOrEmpty(id)) return true;
 
             foreach (var c in PaletteConfig.Colors)
