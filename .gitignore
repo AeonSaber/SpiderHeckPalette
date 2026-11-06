@@ -3,3 +3,4 @@ obj/
 lib/
 .vs/
 *.user
+deployed-backup/
